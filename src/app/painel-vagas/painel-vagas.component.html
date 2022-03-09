@@ -1,15 +1,30 @@
 <h2>Cadastrar</h2>
 <form>
-    <label>Id</label><input type="text" name="id" [(ngModel)] = "vaga.id"><br>
-    <label>Nome</label><input type="text" name="nome" [(ngModel)] = "vaga.nome"><br>
-    <label>Foto</label><input type="text" name="foto" [(ngModel)] = "vaga.foto"><br>
-    <label>Descrição</label><input type="text" name="descricao" [(ngModel)] = "vaga.descricao"><br>
-    <label>Salário</label><input type="text" name="salario" [(ngModel)] = "vaga.salario"><br>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Código Identificador: </label>
+        <input type="text" class="form-control" id="inputEmail4"  name="id" [(ngModel)] = "vaga.id" placeholder="digite o código">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Nome: </label>
+        <input type="password" class="form-control" id="inputPassword4" name="nome" [(ngModel)] = "vaga.nome" placeholder="Nome Completo">
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputAddress2">Descrição</label>
+      <input type="text" class="form-control" id="inputAddress2" name="descricao" [(ngModel)] = "vaga.descricao" placeholder="Descricão">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">Salário</label>
+        <input type="text" class="form-control" id="inputCity" name="salario" [(ngModel)] = "vaga.salario" placeholder="Salário">
+      </div>
+      </div><br>
     <button type="button" (click)="cadastrar()">Cadastrar Vaga</button>
     <button type="button" (click)="atualizar(vaga.id)">Atualizar Vaga</button>
     <button type="button" (click)="excluir(vaga.id)">Excluir Vaga</button>
-</form>
-   
+
+  </form>
 
 <section class="lista-vagas">
     <div *ngFor="let vaga of vagas">
